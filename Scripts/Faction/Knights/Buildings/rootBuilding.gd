@@ -46,12 +46,12 @@ func deselect():
 	is_selected = false
 	selectedFrame.hide_corner()
 
-func unit_entering_station(selfObject, unit):
+func unit_entering_station(selfObject, unit, contextMenu):
 	for station in stations.get_children():
 		if !occupiedStations[station.name]:
 			occupiedStations[station.name] = true
 			var stationPosition = get_global_position_from_entity(station)
-			unit.enterStation(selfObject, stationPosition, station.name)
+			unit.enterStation(selfObject, stationPosition, station.name, contextMenu)
 			break
 	
 func unit_leaving_station(stationName):

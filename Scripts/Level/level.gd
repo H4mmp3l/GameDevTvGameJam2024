@@ -18,6 +18,7 @@ func _ready():
 	Input.set_custom_mouse_cursor(defaultCursor, Input.CURSOR_ARROW, Vector2(22, 17))
 		
 	PlayerCamera.position = InitialCameraPosition.position
+	contextMenu.connect("leave_station", _on_entity_leaving_station)
 	for spawnerContainer in AllSpawnerContainer.get_children():
 		for spawner in spawnerContainer.get_children():
 			spawner.connect("entity_created", _entity_created)
@@ -41,7 +42,9 @@ func _on_entity_selected(selected_entity):
 	
 func _on_entity_stationing(stationing_entity):
 	if current_selected_entity is RootCharacter:
-		var station = stationing_entity.unit_entering_station(stationing_entity, current_selected_entity)
+		stationing_entity.unit_entering_station(stationing_entity, current_selected_entity, contextMenu)
+		
 
-func _unitStationing(castle):
-	print(castle)
+func _on_entity_leaving_station():
+	if current_selected_entity is RootCharacter:
+		current_selected_entity.leaveStation(contextMenu)
