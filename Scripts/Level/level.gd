@@ -39,9 +39,12 @@ func _on_entity_selected(selected_entity):
 	current_selected_entity = selected_entity
 	if current_selected_entity is RootCharacter:
 		current_selected_entity.openContextMenu(contextMenu)
+	else:
+		contextMenu.hide_context_menu()
 	
 func _on_entity_stationing(stationing_entity):
-	if current_selected_entity is RootCharacter:
+	print(current_selected_entity.is_unit_stationed())
+	if current_selected_entity is RootCharacter && !current_selected_entity.is_unit_stationed():
 		stationing_entity.unit_entering_station(stationing_entity, current_selected_entity, contextMenu)
 		
 

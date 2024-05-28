@@ -65,3 +65,6 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	mouse_in = false
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+
+func is_unit_stationed():
+	return is_stationed
