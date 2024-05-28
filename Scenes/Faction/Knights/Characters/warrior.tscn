@@ -1,7 +1,8 @@
-[gd_scene load_steps=53 format=3 uid="uid://f4sx42s7guja"]
+[gd_scene load_steps=54 format=3 uid="uid://f4sx42s7guja"]
 
 [ext_resource type="Script" path="res://Scripts/Faction/Knights/Character/warrior.gd" id="1_8cqxv"]
 [ext_resource type="Texture2D" uid="uid://dfs15qqu1snl8" path="res://Assets/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_qednb"]
+[ext_resource type="PackedScene" uid="uid://m03rx8f1otf3" path="res://Scenes/selected_frame.tscn" id="3_tgahf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ulwuk"]
 atlas = ExtResource("1_qednb")
@@ -399,6 +400,8 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_dc17j")
+
+[node name="SelectedFrame" parent="." instance=ExtResource("3_tgahf")]
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

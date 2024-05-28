@@ -1,7 +1,8 @@
-[gd_scene load_steps=57 format=3 uid="uid://c56s8rftkmjas"]
+[gd_scene load_steps=58 format=3 uid="uid://c56s8rftkmjas"]
 
 [ext_resource type="Texture2D" uid="uid://yv0fugalwwh8" path="res://Assets/Factions/Knights/Troops/Archer/Blue/Archer_Blue.png" id="1_qw08e"]
 [ext_resource type="Script" path="res://Scripts/Faction/Knights/Character/archer.gd" id="1_ry4t3"]
+[ext_resource type="PackedScene" uid="uid://m03rx8f1otf3" path="res://Scenes/selected_frame.tscn" id="3_v3wy0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0s5mc"]
 atlas = ExtResource("1_qw08e")
@@ -236,6 +237,11 @@ animations = [{
 "name": &"idle",
 "speed": 10.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k1ill")
@@ -416,12 +422,14 @@ script = ExtResource("1_ry4t3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_521ak")
-animation = &"idle"
+animation = &"new_animation"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 4)
 shape = SubResource("CapsuleShape2D_bxesf")
+
+[node name="SelectedFrame" parent="." instance=ExtResource("3_v3wy0")]
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

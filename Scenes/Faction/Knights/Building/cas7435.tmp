@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bu187fr6020yr"]
+[gd_scene load_steps=4 format=3 uid="uid://bu187fr6020yr"]
 
 [ext_resource type="Texture2D" uid="uid://rq1xfj54tymq" path="res://Assets/Factions/Knights/Buildings/Castle/Castle_Blue.png" id="1_l8fat"]
 [ext_resource type="Script" path="res://Scripts/Faction/Knights/Buildings/castle.gd" id="1_lc5dr"]
 [ext_resource type="Texture2D" uid="uid://bonryi18k40gt" path="res://Assets/Factions/Knights/Buildings/Castle/Castle_Destroyed.png" id="2_kajmm"]
-[ext_resource type="PackedScene" uid="uid://m03rx8f1otf3" path="res://Scenes/selected_frame.tscn" id="4_uxf6g"]
 
 [node name="Castle" type="Area2D"]
 script = ExtResource("1_lc5dr")
@@ -18,7 +17,7 @@ texture = ExtResource("2_kajmm")
 polygon = PackedVector2Array(-127, 36, -128, 38, -128, 42, -129, 42, -130, 43, -133, 50, -133, 84, -129, 90, -126, 93, -122, 96, -118, 98, -111, 100, -107, 102, -103, 103, -97, 104, -90, 105, -85, 104, -85, 110, -84, 112, -69, 112, -68, 111, 68, 111, 69, 112, 83, 112, 85, 110, 85, 104, 90, 105, 97, 104, 102, 103, 104, 102, 107, 102, 111, 100, 114, 99, 118, 98, 122, 96, 122, 92, 124, 92, 126, 91, 129, 90, 131, 88, 132, 86, 133, 84, 133, 50, 132, 47, 131, 45, 130, 43, 128, 41, 128, 38, 127, 36, 127, 5, 137, -4, 141, -12, 142, -17, 144, -39, 144, -48, 142, -55, 138, -61, 126, -71, 111, -76, 103, -76, 92, -74, 80, -74, 77, -78, 68, -82, -37, -83, -56, -82, -68, -82, -80, -74, -92, -74, -103, -76, -111, -76, -126, -71, -136, -61, -142, -55, -144, -39, -142, -17, -141, -12, -137, -4, -127, 5)
 
 [node name="Spawn" type="Marker2D" parent="."]
-position = Vector2(0, 144)
+position = Vector2(0, 126)
 
 [node name="DestroyedCollision" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-56, 111, -63, 111, -74, 109, -75, 100, -80, 97, -93, 97, -118, 97, -129, 92, -135, 90, -151, 83, -151, 77, -155, 69, -160, 64, -160, 61, -158, 56, -153, 51, -150, 51, -149, 48, -149, 44, -139, 33, -132, 33, -124, 25, -120, 25, -115, 29, -114, 29, -104, 20, -101, 19, -94, 19, -88, 23, -88, 23, -79, 23, -74, 30, -62, 18, -56, 21, -52, 21, -43, 13, -32, 13, -28, 16, -13, 16, -10, 10, 0, 8, 3, 8, 4, 12, 11, 11, 22, 15, 31, 15, 34, 11, 42, 11, 45, 12, 54, 12, 57, 16, 65, 17, 76, 22, 79, 29, 92, 20, 97, 18, 103, 18, 110, 22, 117, 22, 122, 31, 124, 27, 133, 23, 137, 23, 147, 36, 151, 36, 158, 47, 158, 52, 156, 56, 150, 58, 148, 62, 151, 67, 157, 77, 159, 83, 154, 88, 135, 88, 129, 90, 121, 92, 117, 93, 104, 96, 94, 98, 89, 110, 86, 113, 81, 115, 67, 115, 66, 114, 56, 114, 51, 117, 44, 118, 40, 115, -42, 116, -48, 115, -54, 113)
@@ -30,8 +29,6 @@ position = Vector2(-96, -64)
 
 [node name="Station2" type="Marker2D" parent="Stations"]
 position = Vector2(96, -64)
-
-[node name="SelectedFrame" parent="." instance=ExtResource("4_uxf6g")]
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=41 format=3 uid="uid://c78b2lfglcax3"]
+[gd_scene load_steps=42 format=3 uid="uid://c78b2lfglcax3"]
 
 [ext_resource type="Script" path="res://Scripts/Faction/Knights/Character/pawn.gd" id="1_4hcbh"]
 [ext_resource type="Texture2D" uid="uid://brxp8wxest6f" path="res://Assets/Factions/Knights/Troops/Pawn/Blue/Pawn_Blue.png" id="1_v5rga"]
+[ext_resource type="PackedScene" uid="uid://m03rx8f1otf3" path="res://Scenes/selected_frame.tscn" id="3_v1p57"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d13bj"]
 atlas = ExtResource("1_v5rga")
@@ -307,6 +308,8 @@ frame_progress = 0.969292
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_088vp")
+
+[node name="SelectedFrame" parent="." instance=ExtResource("3_v1p57")]
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

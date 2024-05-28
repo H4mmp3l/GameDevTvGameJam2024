@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://m03rx8f1otf3"]
+
+[ext_resource type="Texture2D" uid="uid://x1oyu53aor0r" path="res://Assets/UI/Pointers/03.png" id="1_guk1o"]
+[ext_resource type="Script" path="res://Scripts/selected_frame.gd" id="1_jyw03"]
+[ext_resource type="Texture2D" uid="uid://bokuwdqdo37xo" path="res://Assets/UI/Pointers/04.png" id="2_l62gq"]
+[ext_resource type="Texture2D" uid="uid://3uwq53vqffo7" path="res://Assets/UI/Pointers/05.png" id="3_v6xnq"]
+[ext_resource type="Texture2D" uid="uid://cijkrbwkj0bdn" path="res://Assets/UI/Pointers/06.png" id="4_5gnbg"]
+
+[node name="SelectedFrame" type="Node2D"]
+script = ExtResource("1_jyw03")
+
+[node name="LeftTopCorner" type="Sprite2D" parent="."]
+texture = ExtResource("1_guk1o")
+
+[node name="RightTopCorner" type="Sprite2D" parent="."]
+texture = ExtResource("2_l62gq")
+
+[node name="LeftBottomCorner" type="Sprite2D" parent="."]
+texture = ExtResource("3_v6xnq")
+
+[node name="RightBottomCorner" type="Sprite2D" parent="."]
+texture = ExtResource("4_5gnbg")

@@ -1,18 +1,14 @@
 extends Marker2D
 
-@export var spawnableUnit:PackedScene
+@export var spawnableEntity:PackedScene
 @export var containerPath:NodePath
-@export var stationNode:NodePath
 @onready var container := get_node(containerPath)
 
-signal unit_created
-signal unit_stationing
+signal entity_created
 
-func spawnDefaultUnit():
-	if (spawnableUnit):
-		var unitInstance = spawnableUnit.instantiate()
-		container.add_child(unitInstance)
-		if !stationNode:
-			unitInstance.position = position
-		unit_created.emit(unitInstance)
-		unit_stationing.emit(unitInstance, stationNode)
+func spawnEntity():
+	if (spawnableEntity):
+		var entityInstance = spawnableEntity.instantiate()
+		container.add_child(entityInstance)
+		entityInstance.position = position
+		entity_created.emit(entityInstance)
