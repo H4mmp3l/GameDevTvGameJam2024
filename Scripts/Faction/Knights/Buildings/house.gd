@@ -1,13 +1,20 @@
-extends Area2D
+extends RootBuilding
 
-var mouse_in:bool = false
+@onready var buildSprite = $Build
+@onready var buildingSprite = $Building
+@onready var destroyedSprite = $Destroyed
+@onready var buildCollision = $BuildCollision
+@onready var buildingCollision = $BuildingCollision
+@onready var destroyedCollision = $DestoryedCollision
 
-func _physics_process(delta):
-	if Input.is_action_just_pressed("left_click") && mouse_in:
-		print("House Clicked")
-
-func _on_mouse_entered():
-	mouse_in = true
-
-func _on_mouse_exited():
-	mouse_in = false
+func _ready():
+	buildSprite.visible = true
+	buildCollision.disabled = false
+	currentDisplayedSprite = buildSprite
+	
+	buildingSprite.visible = false
+	buildingCollision.disabled = true
+	destroyedSprite.visible = false
+	destroyedCollision.disabled = true
+	
+	super()

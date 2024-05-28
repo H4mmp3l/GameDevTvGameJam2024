@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cjg6jcsvrgh0u" path="res://Scenes/ui.tscn" id="11_sboxb"]
 [ext_resource type="PackedScene" uid="uid://b3ma5rep375tb" path="res://Scenes/spawner.tscn" id="12_a1pww"]
 
-[node name="Level" type="Node2D"]
+[node name="Level_1" type="Node2D"]
 script = ExtResource("1_anm3s")
 
 [node name="TileMap" parent="." instance=ExtResource("2_8cfsr")]
@@ -39,27 +39,27 @@ position = Vector2(2227, 1168)
 [node name="KnightUnits" type="Node" parent="Spawner"]
 
 [node name="DefaultArcher1" parent="Spawner/KnightUnits" instance=ExtResource("12_a1pww")]
-position = Vector2(2163, 1274)
+position = Vector2(2132, 1041)
 spawnableEntity = ExtResource("5_dqgno")
 containerPath = NodePath("../../../Character")
 
 [node name="DefaultArcher2" parent="Spawner/KnightUnits" instance=ExtResource("12_a1pww")]
-position = Vector2(2251, 1288)
+position = Vector2(2323, 1039)
 spawnableEntity = ExtResource("5_dqgno")
 containerPath = NodePath("../../../Character")
 
 [node name="DefaultArcher3" parent="Spawner/KnightUnits" instance=ExtResource("12_a1pww")]
-position = Vector2(2020, 1470)
+position = Vector2(2154, 1474)
 spawnableEntity = ExtResource("5_dqgno")
 containerPath = NodePath("../../../Character")
 
 [node name="DefaultArcher4" parent="Spawner/KnightUnits" instance=ExtResource("12_a1pww")]
-position = Vector2(2690, 1485)
+position = Vector2(2581, 1416)
 spawnableEntity = ExtResource("5_dqgno")
 containerPath = NodePath("../../../Character")
 
 [node name="DefaultPawn" parent="Spawner/KnightUnits" instance=ExtResource("12_a1pww")]
-position = Vector2(2499, 1237)
+position = Vector2(2226, 1229)
 spawnableEntity = ExtResource("8_7k2s1")
 containerPath = NodePath("../../../Character")
 
@@ -69,29 +69,29 @@ spawnableEntity = ExtResource("9_kkcuf")
 containerPath = NodePath("../../../Character")
 
 [node name="DefaultWarrior2" parent="Spawner/KnightUnits" instance=ExtResource("12_a1pww")]
-position = Vector2(2286, 1389)
+position = Vector2(2257, 1377)
 spawnableEntity = ExtResource("9_kkcuf")
 containerPath = NodePath("../../../Character")
 
 [node name="KnightBuildings" type="Node" parent="Spawner"]
 
 [node name="MainCastle" parent="Spawner/KnightBuildings" instance=ExtResource("12_a1pww")]
-position = Vector2(2220, 1116)
+position = Vector2(2227, 1130)
 spawnableEntity = ExtResource("4_2rrrs")
 containerPath = NodePath("../../../Buildings")
 
 [node name="Tower" parent="Spawner/KnightBuildings" instance=ExtResource("12_a1pww")]
-position = Vector2(2574, 1482)
+position = Vector2(2588, 1531)
 spawnableEntity = ExtResource("6_6svg3")
 containerPath = NodePath("../../../Buildings")
 
 [node name="Tower2" parent="Spawner/KnightBuildings" instance=ExtResource("12_a1pww")]
-position = Vector2(2168, 1547)
+position = Vector2(2168, 1603)
 spawnableEntity = ExtResource("6_6svg3")
 containerPath = NodePath("../../../Buildings")
 
 [node name="Mine" parent="Spawner/KnightBuildings" instance=ExtResource("12_a1pww")]
-position = Vector2(2492, 1153)
+position = Vector2(2506, 1131)
 spawnableEntity = ExtResource("7_kvuu4")
 containerPath = NodePath("../../../Buildings")
 

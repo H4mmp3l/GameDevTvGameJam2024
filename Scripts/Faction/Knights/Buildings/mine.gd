@@ -1,13 +1,21 @@
-extends Area2D
+extends RootBuilding
 
-var mouse_in:bool = false
+@onready var activeSprite = $Active
+@onready var inactiveSprite = $Inactive
+@onready var destroyedSprite = $Destroyed
+@onready var activeCollision = $ActiveCollision
+@onready var inactiveCollision = $InactiveCollision
+@onready var destroyedCollision = $DestroyedCollision
 
-func _physics_process(delta):
-	if Input.is_action_just_pressed("left_click") && mouse_in:
-		print("Mine Clicked")
-
-func _on_mouse_entered():
-	mouse_in = true
-
-func _on_mouse_exited():
-	mouse_in = false
+func _ready():
+	# set default spawn values
+	inactiveSprite.visible = true
+	inactiveCollision.disabled = false
+	currentDisplayedSprite = inactiveSprite
+	
+	activeSprite.visible = false
+	activeCollision.disabled = true
+	destroyedSprite.visible = false
+	destroyedCollision.disabled = true
+	
+	super()

@@ -4,27 +4,32 @@
 [ext_resource type="Texture2D" uid="uid://c7rq66rxwngct" path="res://Assets/Factions/Knights/Buildings/House/House_Construction.png" id="1_qiew5"]
 [ext_resource type="Texture2D" uid="uid://vun7r7um5psd" path="res://Assets/Factions/Knights/Buildings/House/House_Blue.png" id="2_hnad0"]
 [ext_resource type="Texture2D" uid="uid://cgs43l7ca0ats" path="res://Assets/Factions/Knights/Buildings/House/House_Destroyed.png" id="3_s77aa"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yc07w"]
-size = Vector2(90, 69)
+[ext_resource type="PackedScene" uid="uid://m03rx8f1otf3" path="res://Scenes/selected_frame.tscn" id="5_ugdjr"]
 
 [node name="House" type="Area2D"]
 script = ExtResource("1_8qeml")
 
 [node name="Building" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("1_qiew5")
 
 [node name="Build" type="Sprite2D" parent="."]
 texture = ExtResource("2_hnad0")
 
 [node name="Destroyed" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("3_s77aa")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 34.5)
-shape = SubResource("RectangleShape2D_yc07w")
+[node name="BuildingCollision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-44, 69, -45, 67, -45, 49, -39, -5, -38, -6, 38, -6, 39, -5, 45, 47, 45, 69)
+
+[node name="DestoryedCollision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-48, 37, -40, 44, -40, 48, -39, 50, -38, 53, -38, 58, -33, 58, -31, 61, -25, 63, -19, 63, -17, 62, -11, 62, -10, 60, -5, 60, -5, 57, -2, 55, 10, 55, 16, 59, 19, 59, 22, 56, 30, 56, 33, 50, 39, 50, 39, 43, 40, 42, 44, 40, 44, 38, 42, 36, 42, 34, 43, 32, 43, 28, 41, 25, 41, 22, 40, 16, 40, 13, 41, 11, 41, 7, 36, 7, 36, 3, 39, 2, 39, -4, 30, -13, 27, -13, 21, -9, 17, -8, 13, -6, 13, -8, 9, -8, 7, -7, 2, -7, -1, -5, -3, -5, -7, -8, -8, -8, -11, -2, -12, -2, -12, -8, -15, -8, -19, -4, -30, -4, -31, -5, -35, -5, -41, 4, -41, 10, -40, 11, -40, 28, -44, 30, -48, 34)
+
+[node name="BuildCollision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-45, 67, -44, 69, 44, 69, 45, 67, 45, 43, 46, 42, 49, 42, 50, 39, 54, 34, 54, 20, 51, 16, 51, -12, 49, -15, 49, -21, 47, -26, 47, -32, 45, -35, 40, -39, 38, -43, 33, -44, 31, -48, 31, -53, 27, -53, 25, -57, 23, -58, 23, -63, 16, -63, 13, -67, -13, -67, -16, -64, -18, -63, -22, -63, -23, -62, -23, -57, -26, -55, -26, -53, -31, -53, -31, -48, -33, -46, -35, -44, -37, -43, -40, -40, -40, -39, -45, -39, -45, -33, -48, -30, -48, -21, -49, -20, -49, -14, -52, -11, -52, -3, -51, -2, -51, 16, -54, 21, -54, 23, -52, 23, -52, 26, -54, 29, -54, 34, -53, 35, -53, 39, -49, 39, -49, 42, -45, 42)
+
+[node name="Stations" type="Node" parent="."]
+
+[node name="SelectedFrame" parent="." instance=ExtResource("5_ugdjr")]
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
