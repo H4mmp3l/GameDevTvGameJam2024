@@ -1,0 +1,128 @@
+[gd_scene load_steps=11 format=3 uid="uid://64orli1jqox4"]
+
+[ext_resource type="Script" path="res://Scripts/UI/context_menu.gd" id="1_3gbcu"]
+[ext_resource type="Texture2D" uid="uid://bj31tsm5fvwd0" path="res://Assets/UI/Banners/Banner_Vertical.png" id="2_pm87s"]
+[ext_resource type="Texture2D" uid="uid://cofw5r3pxti7j" path="res://Assets/UI/Ribbons/Ribbon_Blue_3Slides.png" id="3_tbv7o"]
+[ext_resource type="FontFile" uid="uid://bmrbo4dt3d22q" path="res://Assets/Fonts/Lumanosimo-Regular.ttf" id="4_jt518"]
+[ext_resource type="Texture2D" uid="uid://b1400gnm7m28l" path="res://Assets/UI/Banners/Carved_9Slides.png" id="5_qq1gb"]
+[ext_resource type="Texture2D" uid="uid://dawxh54vnn87n" path="res://Assets/UI/Buttons/Button_Blue_9Slides.png" id="6_0bkrm"]
+[ext_resource type="Texture2D" uid="uid://q4j5f04lk52l" path="res://Assets/UI/Buttons/Button_Blue_9Slides_Pressed.png" id="7_cgqlq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h2vmf"]
+font = ExtResource("4_jt518")
+font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_8awe8"]
+font = ExtResource("4_jt518")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_epo2p"]
+font = ExtResource("4_jt518")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[node name="UnitContextMenu" type="CanvasLayer"]
+script = ExtResource("1_3gbcu")
+
+[node name="ContextMenu" type="NinePatchRect" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -410.0
+offset_top = -260.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_pm87s")
+region_rect = Rect2(0, 0, 192, 192)
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Name" type="NinePatchRect" parent="ContextMenu"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = -6.0
+offset_right = 244.0
+offset_bottom = 58.0
+scale = Vector2(1.58185, 1.2331)
+texture = ExtResource("3_tbv7o")
+patch_margin_left = 21
+patch_margin_top = 21
+patch_margin_right = 64
+patch_margin_bottom = 21
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="NameLabel" type="Label" parent="ContextMenu/Name"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 7.0
+offset_right = 149.0
+offset_bottom = 40.0
+text = "Name"
+label_settings = SubResource("LabelSettings_h2vmf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HP" type="Label" parent="ContextMenu"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 88.0
+offset_right = 167.0
+offset_bottom = 122.0
+text = "HP: 100"
+label_settings = SubResource("LabelSettings_8awe8")
+
+[node name="Armor" type="Label" parent="ContextMenu"]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 88.0
+offset_right = 350.0
+offset_bottom = 122.0
+text = "ARMOR: 100"
+label_settings = SubResource("LabelSettings_8awe8")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ContextMenu"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 125.0
+offset_right = 352.0
+offset_bottom = 253.0
+scale = Vector2(1, 0.5)
+texture = ExtResource("5_qq1gb")
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="ContextMenu/NinePatchRect"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 23.8531
+offset_right = 285.0
+offset_bottom = 177.853
+scale = Vector2(1, 0.5)
+texture_normal = ExtResource("6_0bkrm")
+texture_pressed = ExtResource("7_cgqlq")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="ContextMenu/NinePatchRect/TextureButton"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -199.706
+offset_right = 267.0
+offset_bottom = -51.7063
+scale = Vector2(1, 3.75)
+text = "Leave Building"
+label_settings = SubResource("LabelSettings_epo2p")
+horizontal_alignment = 1
+vertical_alignment = 1

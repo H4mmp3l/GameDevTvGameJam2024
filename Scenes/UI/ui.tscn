@@ -1,0 +1,130 @@
+[gd_scene load_steps=9 format=3 uid="uid://cjg6jcsvrgh0u"]
+
+[ext_resource type="Script" path="res://Scripts/ui.gd" id="1_f2n2g"]
+[ext_resource type="Texture2D" uid="uid://cmuposytfvu4y" path="res://Assets/UI/Banners/Banner_Horizontal.png" id="1_uygxl"]
+[ext_resource type="Texture2D" uid="uid://b1400gnm7m28l" path="res://Assets/UI/Banners/Carved_9Slides.png" id="3_6qapf"]
+[ext_resource type="Texture2D" uid="uid://nhoxtorjdfwt" path="res://Assets/Resources/Resources/G_Idle_(NoShadow).png" id="4_gfyqu"]
+[ext_resource type="Texture2D" uid="uid://cygkoo4o3yyu7" path="res://Assets/Resources/Resources/W_Idle_(NoShadow).png" id="5_csuyi"]
+[ext_resource type="FontFile" uid="uid://bmrbo4dt3d22q" path="res://Assets/Fonts/Lumanosimo-Regular.ttf" id="5_fpsd6"]
+[ext_resource type="Texture2D" uid="uid://b7usbllxdeh3k" path="res://Assets/Resources/Resources/M_Idle_(NoShadow).png" id="6_m5uj5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0gdo6"]
+font = ExtResource("5_fpsd6")
+font_size = 100
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_f2n2g")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -569.0
+offset_top = 16.0
+offset_right = 412.0
+offset_bottom = 441.0
+grow_horizontal = 0
+scale = Vector2(0.57422, 0.210929)
+texture = ExtResource("1_uygxl")
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Gold Resource" type="NinePatchRect" parent="NinePatchRect"]
+offset_left = 65.4213
+offset_top = 94.9865
+offset_right = 449.421
+offset_bottom = 222.986
+scale = Vector2(0.709482, 1.80242)
+texture = ExtResource("3_6qapf")
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Gold Icon" type="TextureRect" parent="NinePatchRect/Gold Resource"]
+layout_mode = 0
+offset_left = -58.3998
+offset_top = -59.2868
+offset_right = 159.6
+offset_bottom = 158.713
+texture = ExtResource("4_gfyqu")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/Gold Resource"]
+layout_mode = 0
+offset_left = 104.505
+offset_top = -3.2937
+offset_right = 372.505
+offset_bottom = 135.706
+text = "9999"
+label_settings = SubResource("LabelSettings_0gdo6")
+
+[node name="Wood Resource" type="NinePatchRect" parent="NinePatchRect"]
+offset_left = 355.456
+offset_top = 94.9865
+offset_right = 739.456
+offset_bottom = 222.986
+scale = Vector2(0.709482, 1.80242)
+texture = ExtResource("3_6qapf")
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Wood Icon" type="TextureRect" parent="NinePatchRect/Wood Resource"]
+layout_mode = 0
+offset_left = -49.1787
+offset_top = -82.3429
+offset_right = 168.821
+offset_bottom = 135.657
+texture = ExtResource("5_csuyi")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/Wood Resource"]
+layout_mode = 0
+offset_left = 104.505
+offset_top = -3.2937
+offset_right = 372.505
+offset_bottom = 135.706
+text = "9999"
+label_settings = SubResource("LabelSettings_0gdo6")
+
+[node name="Meat Resource" type="NinePatchRect" parent="NinePatchRect"]
+offset_left = 645.491
+offset_top = 94.9865
+offset_right = 1029.49
+offset_bottom = 222.986
+scale = Vector2(0.709482, 1.80242)
+texture = ExtResource("3_6qapf")
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Meat Icon" type="TextureRect" parent="NinePatchRect/Meat Resource"]
+layout_mode = 0
+offset_left = -58.3997
+offset_top = -69.168
+offset_right = 159.6
+offset_bottom = 148.832
+texture = ExtResource("6_m5uj5")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/Meat Resource"]
+layout_mode = 0
+offset_left = 104.505
+offset_top = -3.2937
+offset_right = 372.505
+offset_bottom = 135.706
+text = "9999"
+label_settings = SubResource("LabelSettings_0gdo6")
