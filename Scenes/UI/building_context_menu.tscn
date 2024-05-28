@@ -126,3 +126,5 @@ text = "Leave Building"
 label_settings = SubResource("LabelSettings_epo2p")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="ContextMenu/NinePatchRect/TextureButton" to="." method="_on_leave_building_pressed"]

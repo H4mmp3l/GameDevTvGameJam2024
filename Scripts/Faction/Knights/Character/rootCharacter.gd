@@ -32,6 +32,7 @@ func openContextMenu(contextMenu):
 	contextMenu.change_context_menu_name(nameLabel)
 	contextMenu.change_context_menu_hp(hp)
 	contextMenu.change_context_menu_armor(armor)
+	contextMenu.change_context_menu_leave_building_button(is_stationed)
 	contextMenu.show_context_menu()
 		
 func deselect():
@@ -39,18 +40,19 @@ func deselect():
 	is_selected = false
 
 func move(coordinates:Vector2):
-		position = coordinates	
-		if is_stationed:
-			leaveStation()
+		if !is_stationed:
+			position = coordinates	
 	
-func enterStation(buildingToStationIn, stationPosition, stationName):
+func enterStation(buildingToStationIn, stationPosition, stationName, contextMenu):
 	is_stationed = true
+	contextMenu.change_context_menu_leave_building_button(is_stationed)
 	stationedInBuilding = buildingToStationIn
 	stationedInStation = stationName
 	position = stationPosition
 	
-func leaveStation():
+func leaveStation(contextMenu):
 	is_stationed = false
+	contextMenu.change_context_menu_leave_building_button(is_stationed)
 	position = stationedInBuilding.unit_leaving_station(stationedInStation)
 	stationedInBuilding = null
 	stationedInStation = null
