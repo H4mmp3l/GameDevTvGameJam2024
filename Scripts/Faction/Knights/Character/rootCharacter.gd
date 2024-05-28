@@ -7,6 +7,10 @@ var is_stationed:bool = false
 var stationedInBuilding = null
 var stationedInStation = null
 var is_selected:bool = false
+var nameLabel:String = ""
+var hp:int = 0
+var armor:int = 0
+var damage:int = 0
 
 @onready var selectedFrame = $SelectedFrame
 @onready var sprite = $AnimatedSprite2D
@@ -23,6 +27,12 @@ func _physics_process(delta):
 		selectedFrame.show_corner()
 		is_selected = true
 		emit_signal("entity_selected")
+		
+func openContextMenu(contextMenu):
+	contextMenu.change_context_menu_name(nameLabel)
+	contextMenu.change_context_menu_hp(hp)
+	contextMenu.change_context_menu_armor(armor)
+	contextMenu.show_context_menu()
 		
 func deselect():
 	selectedFrame.hide_corner()

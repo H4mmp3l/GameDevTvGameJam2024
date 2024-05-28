@@ -4,6 +4,7 @@ extends Node2D
 @onready var InitialCameraPosition = $"InitialCameraPosition"
 @onready var AllSpawnerContainer = $Spawner
 @onready var castle = $Buildings/Castle
+@onready var contextMenu = $ContextMenu
 
 var defaultCursor = load("res://Assets/UI/Pointers/01.png")
 var selectCursor = load("res://Assets/UI/Pointers/02.png")
@@ -35,6 +36,8 @@ func _on_entity_selected(selected_entity):
 	if current_selected_entity != null:
 		current_selected_entity.deselect()
 	current_selected_entity = selected_entity
+	if current_selected_entity is RootCharacter:
+		current_selected_entity.openContextMenu(contextMenu)
 	
 func _on_entity_stationing(stationing_entity):
 	if current_selected_entity is RootCharacter:
