@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8mj8t15da3rr"]
+
+[ext_resource type="Texture2D" uid="uid://4v7sn78xl3ns" path="res://Assets/Resources/Gold Mine/GoldMine_Active.png" id="1_bygnf"]
+[ext_resource type="Script" path="res://Scripts/Faction/Knights/Buildings/mine.gd" id="1_pe022"]
+[ext_resource type="Texture2D" uid="uid://bwfgik48d7rjx" path="res://Assets/Resources/Gold Mine/GoldMine_Inactive.png" id="2_osmpi"]
+[ext_resource type="Texture2D" uid="uid://cjadduyrserlb" path="res://Assets/Resources/Gold Mine/GoldMine_Destroyed.png" id="3_8iv5e"]
+
+[node name="Mine" type="Area2D"]
+script = ExtResource("1_pe022")
+
+[node name="Active" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_bygnf")
+
+[node name="Inactive" type="Sprite2D" parent="."]
+texture = ExtResource("2_osmpi")
+
+[node name="Destroyed" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_8iv5e")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-77, 28, -63, 33, -49, 37, -33, 37, -25, 40, 22, 41, 29, 37, 51, 37, 63, 32, 78, 28, 79, 23, 74, 6, 69, -13, 56, -32, 39, -48, 18, -56, 7, -59, -7, -59, -16, -57, -25, -55, -33, -49, -38, -49, -42, -45, -45, -45, -58, -31, -64, -21, -69, -11, -72, -1, -75, 11, -78, 22)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

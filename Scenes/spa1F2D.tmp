@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3ma5rep375tb"]
+
+[ext_resource type="Script" path="res://Scripts/spawner.gd" id="1_3ft6i"]
+[ext_resource type="PackedScene" uid="uid://c56s8rftkmjas" path="res://Scenes/Faction/Knights/Characters/archer.tscn" id="2_t6y1c"]
+
+[node name="Spawner" type="Marker2D"]
+script = ExtResource("1_3ft6i")
+spawnableUnit = ExtResource("2_t6y1c")

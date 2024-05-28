@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu187fr6020yr"]
+
+[ext_resource type="Texture2D" uid="uid://rq1xfj54tymq" path="res://Assets/Factions/Knights/Buildings/Castle/Castle_Blue.png" id="1_l8fat"]
+[ext_resource type="Script" path="res://Scripts/Faction/Knights/Buildings/castle.gd" id="1_lc5dr"]
+[ext_resource type="Texture2D" uid="uid://bonryi18k40gt" path="res://Assets/Factions/Knights/Buildings/Castle/Castle_Destroyed.png" id="2_kajmm"]
+
+[node name="Castle" type="Area2D"]
+script = ExtResource("1_lc5dr")
+
+[node name="Build" type="Sprite2D" parent="."]
+texture = ExtResource("1_l8fat")
+
+[node name="Destroyed" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_kajmm")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-127, 36, -128, 38, -128, 42, -129, 42, -130, 43, -133, 50, -133, 84, -129, 90, -126, 93, -122, 96, -118, 98, -111, 100, -107, 102, -103, 103, -97, 104, -90, 105, -85, 104, -85, 110, -84, 112, -69, 112, -68, 111, 68, 111, 69, 112, 83, 112, 85, 110, 85, 104, 90, 105, 97, 104, 102, 103, 104, 102, 107, 102, 111, 100, 114, 99, 118, 98, 122, 96, 122, 92, 124, 92, 126, 91, 129, 90, 131, 88, 132, 86, 133, 84, 133, 50, 132, 47, 131, 45, 130, 43, 128, 41, 128, 38, 127, 36, 127, 33, 119, 23, 110, 21, 97, 18, 90, 21, 75, 21, 55, 14, -44, 14, -64, 19, -104, 20, -127, 28)
+
+[node name="Station1" type="Marker2D" parent="."]
+position = Vector2(-96, -64)
+
+[node name="Station2" type="Marker2D" parent="."]
+position = Vector2(96, -64)
+
+[node name="Spawn" type="Marker2D" parent="."]
+position = Vector2(0, 126)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
