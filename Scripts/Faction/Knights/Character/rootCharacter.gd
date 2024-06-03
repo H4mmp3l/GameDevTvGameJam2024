@@ -14,6 +14,7 @@ var damage:int = 0
 
 @onready var selectedFrame = $SelectedFrame
 @onready var sprite = $AnimatedSprite2D
+@onready var targetPointForMovement = $NavigationAgent2D
 
 signal entity_selected
 
@@ -40,8 +41,7 @@ func deselect():
 	is_selected = false
 
 func move(coordinates:Vector2):
-		if !is_stationed:
-			position = coordinates	
+	targetPointForMovement = coordinates
 	
 func enterStation(buildingToStationIn, stationPosition, stationName, contextMenu):
 	is_stationed = true

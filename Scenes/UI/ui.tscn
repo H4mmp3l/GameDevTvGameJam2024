@@ -34,6 +34,7 @@ axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
 [node name="Gold Resource" type="NinePatchRect" parent="NinePatchRect"]
+layout_mode = 0
 offset_left = 65.4213
 offset_top = 94.9865
 offset_right = 449.421
@@ -66,6 +67,7 @@ text = "9999"
 label_settings = SubResource("LabelSettings_0gdo6")
 
 [node name="Wood Resource" type="NinePatchRect" parent="NinePatchRect"]
+layout_mode = 0
 offset_left = 355.456
 offset_top = 94.9865
 offset_right = 739.456
@@ -98,6 +100,7 @@ text = "9999"
 label_settings = SubResource("LabelSettings_0gdo6")
 
 [node name="Meat Resource" type="NinePatchRect" parent="NinePatchRect"]
+layout_mode = 0
 offset_left = 645.491
 offset_top = 94.9865
 offset_right = 1029.49

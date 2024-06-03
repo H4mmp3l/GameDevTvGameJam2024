@@ -1,53 +1,29 @@
 extends Node2D
 
-@onready var PlayerCamera = $"Player Camera"
-@onready var InitialCameraPosition = $"InitialCameraPosition"
-@onready var AllSpawnerContainer = $Spawner
-@onready var castle = $Buildings/Castle
-@onready var contextMenu = $ContextMenu
+@onready var characterContainer = $CharacterContainer
+@onready var buildingContainer = $BuildingContainer
+@onready var selectedFrame = $SelectedFrame
 
-var defaultCursor = load("res://Assets/UI/Pointers/01.png")
-var selectCursor = load("res://Assets/UI/Pointers/02.png")
-
-var current_selected_entity = null
-
-signal entity_selected
+var selectedEntity:Node2D
 
 func _ready():
-	Input.set_custom_mouse_cursor(selectCursor, Input.CURSOR_POINTING_HAND, Vector2(32, 32))
-	Input.set_custom_mouse_cursor(defaultCursor, Input.CURSOR_ARROW, Vector2(22, 17))
-		
-	PlayerCamera.position = InitialCameraPosition.position
-	contextMenu.connect("leave_station", _on_entity_leaving_station)
-	for spawnerContainer in AllSpawnerContainer.get_children():
-		for spawner in spawnerContainer.get_children():
-			spawner.connect("entity_created", _entity_created)
-			spawner.spawnEntity()
+	for characterNode in characterContainer.get_children():
+		link_selected_entity_signal(characterNode)
 	
+	for buildingNode in buildingContainer.get_children():
+		link_selected_entity_signal(buildingNode)
+
 func _process(delta):
-	if current_selected_entity is RootCharacter && Input.is_action_just_pressed("right_click"):
-		current_selected_entity.move(get_global_mouse_position())
+	if Input.is_action_just_pressed("deselect"):
+		selectedEntity.deselect()
+		selectedEntity = null
+		selectedFrame.hide_corner()
 
-func _entity_created(entity):
-	entity.connect("entity_selected", _on_entity_selected.bind(entity))
-	if entity is RootBuilding:
-		entity.connect("entity_stationing", _on_entity_stationing.bind(entity))
+func link_selected_entity_signal(entity):
+	entity.connect("entitySelected", _on_entity_selected)
 
-func _on_entity_selected(selected_entity):
-	if current_selected_entity != null:
-		current_selected_entity.deselect()
-	current_selected_entity = selected_entity
-	if current_selected_entity is RootCharacter:
-		current_selected_entity.openContextMenu(contextMenu)
-	else:
-		contextMenu.hide_context_menu()
-	
-func _on_entity_stationing(stationing_entity):
-	print(current_selected_entity.is_unit_stationed())
-	if current_selected_entity is RootCharacter && !current_selected_entity.is_unit_stationed():
-		stationing_entity.unit_entering_station(stationing_entity, current_selected_entity, contextMenu)
-		
-
-func _on_entity_leaving_station():
-	if current_selected_entity is RootCharacter:
-		current_selected_entity.leaveStation(contextMenu)
+func _on_entity_selected(entity):
+	if selectedEntity is Node2D:
+		selectedEntity.deselect()
+	selectedEntity = entity
+	selectedFrame.set_corner_positions_and_show_frame(entity.global_position, entity.selectedFrameWidth, entity.selectedFrameHeigth)

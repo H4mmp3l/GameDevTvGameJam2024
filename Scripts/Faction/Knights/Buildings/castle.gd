@@ -1,5 +1,7 @@
 extends RootBuilding
 
+class_name Castle
+
 @onready var buildSprite = $Build
 @onready var destroyedSprite = $Destroyed
 @onready var buildCollision = $BuildCollision
