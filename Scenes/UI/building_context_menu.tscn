@@ -22,7 +22,7 @@ font = ExtResource("4_jt518")
 font_size = 24
 font_color = Color(0, 0, 0, 1)
 
-[node name="UnitContextMenu" type="CanvasLayer"]
+[node name="BuildingContextMenu" type="CanvasLayer"]
 script = ExtResource("1_3gbcu")
 
 [node name="ContextMenu" type="NinePatchRect" parent="."]
@@ -88,7 +88,7 @@ offset_bottom = 122.0
 text = "ARMOR: 100"
 label_settings = SubResource("LabelSettings_8awe8")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="ContextMenu"]
+[node name="LeaveBuilding" type="NinePatchRect" parent="ContextMenu"]
 layout_mode = 0
 offset_left = 60.0
 offset_top = 125.0
@@ -103,7 +103,7 @@ patch_margin_bottom = 64
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
-[node name="TextureButton" type="TextureButton" parent="ContextMenu/NinePatchRect"]
+[node name="TextureButton" type="TextureButton" parent="ContextMenu/LeaveBuilding"]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 23.8531
@@ -115,7 +115,7 @@ texture_pressed = ExtResource("7_cgqlq")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="ContextMenu/NinePatchRect/TextureButton"]
+[node name="Label" type="Label" parent="ContextMenu/LeaveBuilding/TextureButton"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = -199.706
@@ -127,4 +127,4 @@ label_settings = SubResource("LabelSettings_epo2p")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="ContextMenu/NinePatchRect/TextureButton" to="." method="_on_leave_building_pressed"]
+[connection signal="pressed" from="ContextMenu/LeaveBuilding/TextureButton" to="." method="_on_leave_building_pressed"]

@@ -311,5 +311,8 @@ shape = SubResource("CapsuleShape2D_088vp")
 
 [node name="SelectedFrame" parent="." instance=ExtResource("3_v1p57")]
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -45,6 +45,7 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [node name="Name" type="NinePatchRect" parent="ContextMenu"]
+layout_mode = 0
 offset_left = 52.0
 offset_top = -6.0
 offset_right = 244.0
@@ -70,6 +71,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HP" type="Label" parent="ContextMenu"]
+layout_mode = 0
 offset_left = 59.0
 offset_top = 88.0
 offset_right = 167.0
@@ -78,6 +80,7 @@ text = "HP: 100"
 label_settings = SubResource("LabelSettings_8awe8")
 
 [node name="Armor" type="Label" parent="ContextMenu"]
+layout_mode = 0
 offset_left = 181.0
 offset_top = 88.0
 offset_right = 350.0
@@ -86,6 +89,7 @@ text = "ARMOR: 100"
 label_settings = SubResource("LabelSettings_8awe8")
 
 [node name="LeaveBuilding" type="NinePatchRect" parent="ContextMenu"]
+layout_mode = 0
 offset_left = 60.0
 offset_top = 125.0
 offset_right = 352.0
@@ -100,6 +104,7 @@ axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
 [node name="TextureButton" type="TextureButton" parent="ContextMenu/LeaveBuilding"]
+layout_mode = 0
 offset_left = 6.0
 offset_top = 23.8531
 offset_right = 285.0
@@ -111,6 +116,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="ContextMenu/LeaveBuilding/TextureButton"]
+layout_mode = 0
 offset_left = 9.0
 offset_top = -199.706
 offset_right = 267.0
