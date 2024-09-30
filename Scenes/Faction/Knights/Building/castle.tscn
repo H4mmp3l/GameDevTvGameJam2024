@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bu187fr6020yr"]
+[gd_scene load_steps=4 format=3 uid="uid://bu187fr6020yr"]
 
 [ext_resource type="Texture2D" uid="uid://rq1xfj54tymq" path="res://Assets/Factions/Knights/Buildings/Castle/Castle_Blue.png" id="1_l8fat"]
 [ext_resource type="Script" path="res://Scripts/Faction/Knights/Buildings/castle.gd" id="1_lc5dr"]
 [ext_resource type="Texture2D" uid="uid://bonryi18k40gt" path="res://Assets/Factions/Knights/Buildings/Castle/Castle_Destroyed.png" id="2_kajmm"]
-[ext_resource type="PackedScene" uid="uid://m03rx8f1otf3" path="res://Scenes/selected_frame.tscn" id="4_uxf6g"]
 
 [node name="Castle" type="Area2D"]
 script = ExtResource("1_lc5dr")
@@ -30,8 +29,6 @@ position = Vector2(-96, -64)
 
 [node name="Station2" type="Marker2D" parent="Stations"]
 position = Vector2(96, -64)
-
-[node name="SelectedFrame" parent="." instance=ExtResource("4_uxf6g")]
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

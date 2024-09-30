@@ -10,6 +10,7 @@ var isSelected:bool = false
 var speed:int = 300
 var selectedFrameWidth = 64
 var selectedFrameHeigth = 64
+var selectedFrame: Node2D
 
 signal entitySelected
 
@@ -22,15 +23,19 @@ func _process(delta):
 	if Input.is_action_just_pressed("left_click") && isMouseOver:
 		entitySelected.emit(self)
 		isSelected = true
+		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 	if Input.is_action_just_pressed("right_click") && isSelected:
 		navAgent.target_position = get_global_mouse_position()
 	move()
 
 func _on_mouse_entered():
 	isMouseOver = true
+	if !isSelected:
+		Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 
 func _on_mouse_exited():
 	isMouseOver = false
+	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 
 func _on_navigation_agent_2d_navigation_finished():
 	animatedSprite.play("idle")
@@ -44,7 +49,12 @@ func move():
 		else:
 			animatedSprite.flip_h = true
 		animatedSprite.play("running")
+		if (isSelected):
+			selectedFrame.set_frame_position(global_position)
 		move_and_slide()
 
 func deselect():
 	isSelected = false
+
+func updateFrame(selectedFrameObject):
+	selectedFrame = selectedFrameObject

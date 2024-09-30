@@ -4,6 +4,7 @@ class_name Tower
 
 var currentDisplayedSprite = null
 var isMouseOver:bool = false
+var isSelected:bool = false
 var selectedFrameWidth = null
 var selectedFrameHeigth = null
 
@@ -35,12 +36,17 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("left_click") && isMouseOver:
 		entitySelected.emit(self)
+		isSelected = true
+		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 
 func _on_mouse_entered():
 	isMouseOver = true
+	if !isSelected:
+		Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 
 func _on_mouse_exited():
 	isMouseOver = false
+	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 
 func deselect():
 	isSelected = false
